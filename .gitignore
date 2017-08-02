@@ -7,5 +7,7 @@ __pycache__
 
 **/data/
 **/.ipynb_checkpoints/
+**/img_align_celeba/
 
-/session-1/img_align_celeba/
+session-2/explore.mp4
+session-2/session-2.zip
