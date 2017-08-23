@@ -322,6 +322,20 @@ def train_vae(files,
         -1.0, 1.0, [4, n_code]).astype(np.float32)
     zs = utils.make_latent_manifold(zs, n_examples)
 
+    # zs = np.random.uniform(
+    #    -1.0, 1.0, [n_examples * n_examples, n_code]).astype(np.float32)
+
+    #zs = np.zeros([n_code, n_examples, n_code], np.float32)
+    #step = (n_examples / (n_examples - 1)) * (2 / n_examples)
+    #for x in range(n_code):
+    #    for y in range(n_examples):
+    #        zs[x][y][x] = (y * step) - 1
+    #print(zs)
+    #zs = zs.reshape([n_code * n_examples, n_code])
+
+    #zs = np.random.randint(2, size=(n_examples * n_examples, n_code)).astype(np.float32) * 2 - 1
+    #print(zs)
+
     optimizer = tf.train.AdamOptimizer(
         learning_rate=learning_rate).minimize(ae['cost'])
 
